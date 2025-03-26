@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ReLeaf</title>
+	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+	<link href="css/bootstrap.min.css" rel="stylesheet" >
+	<link href="css/font-awesome.min.css" rel="stylesheet" >
+	<link href="css/global.css" rel="stylesheet">
+	<link href="css/docs.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<script src="js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+<section id="top" class="bg_green pt-2 pb-2">
+<div class="container-xl">
+ <div class="row top_1">
+  <div class="col-md-8">
+   <div class="top_1l">
+    <ul class="mb-0">
+		<li class="text-white d-inline-block">Welcome to Electronics Recycling </li>
+		<li class="text-white d-inline-block mx-2">| </li>
+		<li class="d-inline-block"> <a class="text-white " href="#">How to Find Us</a> </li>
+		<li class="text-white d-inline-block mx-2">| </li>
+		<li class="d-inline-block"> <a class="text-white " href="#">Give Feedback</a> </li>
+	</ul>
+   </div>
+  </div>
+  <div class="col-md-4">
+   <div class="top_1r text-end">
+      <div class="input-group">
+				<input type="text" class="form-control border-0 bg-transparent text-white" placeholder="Search Keyword">
+				<span class="input-group-btn">
+					<button class="btn btn-primary col_green bg-transparent rounded-0 p-1 px-3 border-0" type="button">
+						<i class="fa fa-search"></i> </button>
+				</span>
+		</div>
+   </div>
+  </div>
+ </div>
+</div>
+</section>
+
+<section id="header">
+	<nav class="navbar navbar-expand-md navbar-light bg-white shadow_box" id="navbar_sticky">
+	  <div class="container-xl">
+		<a class="text-black p-0 navbar-brand fw-bold me-0" href="index.html"><i class="fa fa-leaf me-1 col_green align-middle"></i> ReLeaf</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+		 <ul class="navbar-nav mb-0">
+			<li class="nav-item">
+			  <a class="nav-link" href="index.html">Home</a>
+			</li>
+	
+		<li class="nav-item">
+			  <a class="nav-link" href="about.html">About </a>
+			</li>
+	
+		<li class="nav-item">
+			  <a class="nav-link" href="services.html">Services </a>
+			</li>
+	
+		<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="docs.html">API Documentation </a>
+			</li>
+	
+		<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				Pages
+			  </a>
+			  <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
+				<li><a class="dropdown-item" href="faq.html"> Faq</a></li>
+				<li><a class="dropdown-item border-0" href="contact.html"> Contact Us</a></li>
+			  </ul>
+			</li>
+	
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	</section>
+
+<section id="center" class="center_team">
+   <div class="center_om bg_back">
+     <div class="container-xl">
+  <div class="row center_o1 text-center">
+     <div class="col-md-12">
+	    <h2 class="text-white text-uppercase font_50">API Documentation</h2>
+	    <h6 class="col_green  fw-bold mb-0 mt-3"><a class="text-light" href="#">Home</a> <span class="mx-2 text-white-50">/</span> Documentation</h6>
+	 </div>
+  </div>
+ </div>
+   </div>   
+ </section>
+ <section id="api-docs" class="p_3 bg-light">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="mb-4">📡 ReLeaf API Documentation</h2>
+                <p class="lead text-muted">Easily integrate ReLeaf's powerful deforestation analysis into your applications.</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="card shadow-sm border-0 rounded-3">
+                    <div class="card-body">
+                        <h4>🔗 Base URL</h4>
+                        <code class="d-block bg-dark text-light p-2 rounded">https://api.projectreleaf.xyz/</code>
+
+                        <h4 class="mt-4">📍 Available Endpoints</h4>
+                        <div class="mt-3">
+                            <h5 class="text-primary">1️⃣ Get Deforestation Prediction</h5>
+                            <p><strong>Endpoint:</strong> <code>/predict</code></p>
+                            <p><strong>Method:</strong> <span class="badge bg-success">POST</span></p>
+                            <p><strong>Description:</strong> Get deforestation insights using either map coordinates or a custom image.</p>
+                            
+                            <h6>Option 1: Map-based Analysis</h6>
+                            <pre class="bg-dark text-light p-3 rounded">
+{
+    "email": "user@example.com",
+    "watchlist": boolean,
+    "timeframe": string,
+    "min_lat": float,
+    "max_lat": float,
+    "min_long": float,
+    "max_long": float,
+    "zoom": float
+}
+                            </pre>
+
+                            <h6>Python Example - Map Analysis</h6>
+                            <pre class="bg-dark text-light p-3 rounded"><code class="language-python"><span class="text-info">import</span> requests
+
+data = {
+    <span class="text-warning">"email"</span>: <span class="text-success">"your.email@example.com"</span>,
+    <span class="text-warning">"watchlist"</span>: <span class="text-info">True</span>,
+    <span class="text-warning">"timeframe"</span>: <span class="text-success">"2023-2024"</span>,
+    <span class="text-warning">"min_lat"</span>: <span class="text-danger">12.9716</span>,
+    <span class="text-warning">"max_lat"</span>: <span class="text-danger">13.9716</span>,
+    <span class="text-warning">"min_long"</span>: <span class="text-danger">77.5946</span>,
+    <span class="text-warning">"max_long"</span>: <span class="text-danger">78.5946</span>,
+    <span class="text-warning">"zoom"</span>: <span class="text-danger">12.5</span>
+}
+
+response = requests.post(<span class="text-success">"https://api.projectreleaf.xyz/predict"</span>, json=data).json()</code></pre>
+
+                            <h6>Option 2: Custom Image Analysis</h6>
+                            <pre class="bg-dark text-light p-3 rounded">
+{
+    "email": "user@example.com",
+    "image": "base64-encoded-image"
+}
+                            </pre>
+
+                            <h6>Python Example - Image Analysis</h6>
+                            <pre class="bg-dark text-light p-3 rounded"><code class="language-python"><span class="text-info">import</span> requests
+<span class="text-info">import</span> base64
+
+<span class="text-info">with</span> <span class="text-primary">open</span>(<span class="text-success">"forest_image.jpg"</span>, <span class="text-success">"rb"</span>) <span class="text-info">as</span> image_file:
+    encoded_image = base64.b64encode(image_file.read()).decode(<span class="text-success">'utf-8'</span>)
+
+data = {
+    <span class="text-warning">"email"</span>: <span class="text-success">"your.email@example.com"</span>,
+    <span class="text-warning">"image"</span>: encoded_image
+}
+
+response = requests.post(<span class="text-success">"https://api.projectreleaf.xyz/predict"</span>, json=data).json()</code></pre>
+                        </div>
+						<div class="mt-4">
+                            <h4>✅ Example Response</h4>
+                            <pre class="bg-dark text-light p-3 rounded">
+{
+        "predicted_mask_base64": "base64_encoded_mask_image",
+        "forested_percentage": 65.2,
+        "deforested_percentage": 28.7,
+        "other_percentage": 6.1,
+        "ai_analysis": "The area shows significant deforestation in the northwestern region..."
+}
+                            </pre>
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="text-primary">2️⃣ More coming soon!></h5>
+                            <p><strong>Endpoint:</strong> <code>/&lt;REDACTED&gt;</code></p>
+                            <p><strong>Method:</strong> <span class="badge bg-info">N/A</span></p>
+                            <p><strong>Description:</strong> REDACTED</p>
+                            <pre class="bg-dark text-light p-3 rounded">
+N/A
+                            </pre>
+                        </div>
+                        <div class="mt-4">
+                            <h4>🔑 Authentication</h4>
+                            <p>No authentication is required to use the ReLeaf API, but this may change in the future.</p>
+						</div>
+                        <div class="mt-4 text-center">
+                            <p class="text-muted">Need help? <a href="contact.html" class="text-primary">Contact our support team</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<section id="footer" class="p_3">
+	<div class="container-xl">
+			<div class="footer_1 row">
+					<div class="col-md-6">
+							<div class="footer_1i">
+									<h4 class="mb-4"><a class="text-white" href="index.html"><i class="fa fa-leaf me-1 col_green align-middle"></i> ReLeaf</a></h4>
+									<p class="text-white-50">ReLeaf is dedicated to using technology to protect our planet's forests and promote sustainability.</p>
+									<h6 class="text-light"><i class="fa fa-map-marker col_green me-1"></i> Hyderabad, Telangana, India</h6>
+									<h6 class="mt-3"><i class="fa fa-phone col_green me-1"></i> <a class="text-light" href="#">+91 124567 890</a></h6>
+									<h6 class="mt-3 mb-0"><i class="fa fa-envelope col_green me-1"></i> <a class="text-light" href="#">support@projectreleaf.xyz</a></h6>
+							</div>
+					</div>
+					<div class="col-md-6">
+							<div class="footer_1i">
+									<h4 class="mb-4 text-white">Get Involved</h4>
+									<p class="text-white-50 mb-2">Join us in our mission to protect the planet. Learn how you can contribute to our efforts.</p>
+									<h6 class="col_green">Volunteer Opportunities</h6>
+									<p class="text-white-50 mb-2 mt-3">Become a part of our team and help us make a difference.</p>
+									<h6 class="col_green">Partnerships</h6>
+									<p class="text-white-50 mb-2 mt-3">Collaborate with us to promote sustainability and conservation.</p>
+									<h6 class="col_green mb-0">Contact Us</h6>
+							</div>
+					</div>
+			</div>
+	</div>
+</section>
+
+<section id="footer_b" class="pt-3 pb-3">
+<div class="container-xl">
+	<div class="row footer_b1">
+ <div class="col-md-12">
+	<div class="footer_b1l text-center">
+		<p class="mb-0">© 2025 ReLeaf. All Rights Reserved</p>
+ </div>
+</div>
+</div>
+</section>
+<script>
+window.onscroll = function() {myFunction()};
+var navbar_sticky = document.getElementById("navbar_sticky");
+var sticky = navbar_sticky.offsetTop;
+var navbar_height = document.querySelector('.navbar').offsetHeight;
+function myFunction() {
+  if (window.pageYOffset >= sticky + navbar_height) {
+    navbar_sticky.classList.add("sticky")
+	document.body.style.paddingTop = navbar_height + 'px';
+  } else {
+    navbar_sticky.classList.remove("sticky");
+	document.body.style.paddingTop = '0'
+  }
+}
+</script>
+
+</body>
+
+
+</html>
