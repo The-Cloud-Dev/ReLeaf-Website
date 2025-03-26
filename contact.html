@@ -126,7 +126,7 @@
 	   </div>
 	   <div class="col-md-6">
 	    <div class="quote_2l">
-		 <input placeholder="Website" class="form-control" type="text">
+		 <input placeholder="Subject" class="form-control" type="text">
 		</div>
 	   </div>
      </div>
@@ -283,14 +283,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let name = document.querySelector('input[placeholder="Name"]').value.trim();
         let email = document.querySelector('input[placeholder="Email Address"]').value.trim();
         let phone = document.querySelector('input[placeholder="Phone Number"]').value.trim();
-        let website = document.querySelector('input[placeholder="Website"]').value.trim();
+        let subject = document.querySelector('input[placeholder="Subject"]').value.trim();
         let message = document.querySelector('textarea[placeholder="Write a Message"]').value.trim();
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const phoneRegex = /^\+?[\d\s-]{10,}$/;
-        const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
 
-        // Simplified error checking
         if (!name || name.length < 2 || !email || !emailRegex.test(email)) {
             showError("Please check your name and email address");
             return;
@@ -301,8 +299,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        if (website && !urlRegex.test(website)) {
-            showError("Please enter a valid website URL");
+        if (!subject || subject.length < 2) {
+            showError("Please enter a subject");
             return;
         }
 
@@ -315,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
             name: name,
             email: email,
             phone: phone,
-            website: website || null,
+            subject: subject,
             message: message
         };
 
@@ -339,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector('input[placeholder="Name"]').value = '';
             document.querySelector('input[placeholder="Email Address"]').value = '';
             document.querySelector('input[placeholder="Phone Number"]').value = '';
-            document.querySelector('input[placeholder="Website"]').value = '';
+            document.querySelector('input[placeholder="Subject"]').value = '';
             document.querySelector('textarea[placeholder="Write a Message"]').value = '';
         })
         .catch(error => {
